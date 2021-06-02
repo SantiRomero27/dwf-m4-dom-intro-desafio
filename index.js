@@ -25,17 +25,14 @@ const cosasQueAprendimos = [
     },
 ];
 
-// Función para borrar los li dentro de un ul
+// Función para borrar los li dentro de la lista
 function borrarLi() {
-    const liArray = document.getElementsByTagName("li");
+    const liArray = document.querySelectorAll(".lista li");
 
     // Borro los li
-    for (let i = liArray.length - 1; i >= 0; i--) {
-        let liEl = liArray[i];
-
-        // Para borrarlos, primero instancio al nodo padre, para después borrar el hijo
-        liEl.parentNode.removeChild(liEl);
-    }
+    liArray.forEach((itemLi) => {
+        itemLi.remove();
+    });
 }
 
 // Función para crear elementos y hacerle el append al ul
